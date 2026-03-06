@@ -1,0 +1,45 @@
+/* :root declares variables that can be used anywhere in your file */
+:root {
+  /* We use -- to define a variable name */
+  --glass-bg: rgba(30, 41, 59, 0.7); /* A semi-transparent dark blue color */
+  --glass-border: rgba(255, 255, 255, 0.1); /* A nearly invisible white line */
+
+  --accent-blue: #3b82f6;
+}
+
+/* The asterisk (*) that selects literally EVERY element on the page */
+* {
+  margin: 0; /* Removes all default outside spacing */
+  padding: 0; /* Removes all default inside spacing */
+  box-sizing: border-box; /* Ensures borders/padding don't make elements wider than we set them */
+  font-family: 'Outfit', sans-serif; /* Applies the Google font we added to index.html to EVERYTHING */
+}
+
+/*We target the body tag and everything in it now */
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  min-height: 100vh; /* This means '100%' of the Viewport Height. It forces the body to be as tall as your screen */
+  display: flex; /* This turns the body into a flex container */
+  justify-content: center; /*Center everything horizontally (left to right)*/
+  align-items: center; /*Center everything vertically (top to bottom)*/
+}
+
+/* The (.) means it is a class selector */
+.glass-panel {
+  /* Use our variables! var(--name) reaches up to :root to grab the value */
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+
+  /* The magic blur effect */
+  backdrop-filter: blur(12px);
+
+  /* Round the corners nicely */
+  border-radius: 16px;
+
+  /* Give it some breathing room inside the box */
+  padding: 2rem;
+
+  /* A soft shadow */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
